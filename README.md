@@ -15,6 +15,7 @@ You can also clone the repo to your device through git@github.com:lills1/Generat
 
 <h1> preview </h1>
 
+<img src="https://github.com/lills1/Generate-a-password/blob/main/lills1.github.io_Generate-a-password_.png">
 
 
 <h1> Usage </h1>
