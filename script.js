@@ -51,15 +51,23 @@ function generatePassword() {
 		// prompts the user to select between the criteria of 8-128
 
 		do {
-			let password_length_str = prompt("Please select at least 8 with no more than 128 characters");
+			let password_length_str = prompt("Please select a number between 8-128 for the length of your password");
 			let text;
 
 			//4 criteria is set: if it returns as null, an empty string, less than 8 or more than 128 will alert a nessage
+			if ( password_length_str === null || password_length_str === "") {
+				confirm("are you sure you want to cancel?");
+				return "";
+			}
 
-			if (password_length_str == null || password_length_str == "" || !isNumeric(password_length_str) || parseInt(password_length_str) < 8 || parseInt(password_length_str) > 128) {
+
+			else if ( !isNumeric(password_length_str) || parseInt(password_length_str) < 8 || parseInt(password_length_str) > 128) {
 				alert("invalid number, please retry");
 				password_length = -1;
-			} else { //otherwise it will work
+			}
+
+	
+			else { //otherwise it will work
 				password_length = parseInt(password_length_str);
 			}
 		} while (password_length < 8);
